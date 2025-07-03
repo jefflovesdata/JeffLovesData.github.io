@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeff Maroney - Interactive Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .kpi-card h3, .timeline-item h4 {
+            color: #1e293b; /* slate-800 */
+        }
+        .timeline-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding: 0 1.5rem;
+        }
+        .timeline-details.open {
+            max-height: 500px; /* Adjust as needed */
+            padding: 1.5rem 1.5rem;
+        }
+        .timeline-marker {
+            transition: background-color 0.3s ease;
+        }
+        .timeline-item.active .timeline-marker {
+            background-color: #3b82f6; /* Blue-500 */
+        }
+         .timeline-item.active h4 {
+            color: #1d4ed8; /* Blue-700 */
+        }
+    </style>
+    <!-- 
+        Chosen Palette: Slate Gray Professional
+        Application Structure Plan: A single-page application with an initial KPI dashboard for impact, an interactive career timeline to show progression without being text-heavy, and distinct sections for skills and education. This non-linear structure allows recruiters to quickly grasp key achievements and explore details as needed.
+        Visualization & Content Choices: Resume Info -> Goal -> Method -> Interaction -> Justification. Quantifiable Achievements -> Inform -> Animated Number Counters -> On-scroll animation -> Engaging & memorable. Career History -> Explore -> Interactive Timeline -> JS toggle on click -> Prevents information overload. Skills -> Organize -> Grid of cards -> Hover effect -> Clean & modern.
+        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-slate-800 tracking-wider">JEFF LOVES DATA</div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase">
+                <a href="index.html" class="text-slate-600 hover:text-blue-600 transition">Projects</a>
+                <a href="about.html" class="text-slate-600 hover:text-blue-600 transition">About Me</a>
+                <a href="resume.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Resume</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-5">
+                <a href="https://www.linkedin.com/in/jeff-maroney/" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-lg"></i></a>
+                <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-lg"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Summary & KPIs Section -->
+        <section id="summary" class="mb-16 md:mb-24">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 uppercase">
+                    <a href="20250703 Resume.pdf" target="_blank" class="hover:text-blue-600 transition">RESUME</a>
+                </h1>
+                <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                    Results-oriented Senior Data Analyst and Project Manager with over 8 years of experience leading teams and delivering data-driven solutions that enhance business performance and customer-centered outcomes. Proven ability to take ownership of the data lifecycle, from data automation to SQL analysis and interactive data visualizations. A dynamic leader dedicated to fostering a culture of excellence and transforming complex data into clear, actionable business intelligence.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="kpi-card bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2" data-kpi="8">0</h3>
+                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Years of Experience</p>
+                </div>
+                <div class="kpi-card bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2" data-kpi="300">0</h3>
+                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Dashboards Architected</p>
+                </div>
+                <div class="kpi-card bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2" data-kpi="10000">0</h3>
+                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">B2B Users</p>
+                </div>
+                 <div class="kpi-card bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2" data-kpi="2000000">0</h3>
+                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Dashboard Views</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-16 md:mb-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center uppercase">Professional Experience</h2>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 top-0 h-full w-0.5 bg-slate-200"></div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    
+                    <div class="timeline-item pl-12 cursor-pointer group">
+                        <div class="flex items-center">
+                            <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
+                                <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold uppercase">Sr. Manager, VBG Sales Analytics and Data Science</h4>
+                                <p class="text-sm text-slate-500">Verizon | Jul 2020 - Sep 2024</p>
+                            </div>
+                        </div>
+                        <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Delivered business intelligence for performance metrics, sales, and operations, taking ownership of the data pipeline and dashboard architecture to drive strategic programs.</li>
+                                <li>Architected 300+ visualization software dashboards on cloud infrastructure with over 2m views from 10k+ B2B users.</li>
+                                <li>Demonstrated innovation by designing and launching the first external partner reporting suite for 50+ users, resulting in a 19% increase in strategic product adoption and a 15% YoY revenue increase for Channel, Indirect and Retail teams.</li>
+                                <li>Improved operational excellence by automating reporting processes for 8 channel programs, reducing ad-hoc reporting requests by 20% and ensuring data integrity and brand standards across 800 users.</li>
+                                <li>Collaborated with stakeholders to translate business vision into data warehouse requirements, using data mining and modeling to drive scalable solutions for building and automating data pipelines and dashboards.</li>
+                                <li>Enabled data-driven product development via streamlined data access and predictive analytics onboarding programs, optimizing inventory management and point-of-sale growth through training, learning and development.</li>
+                                <li>Building relationships with remote teams to monitor organizational short and long-term goals and embedded solutions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item pl-12 cursor-pointer group">
+                        <div class="flex items-center">
+                             <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
+                                <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold uppercase">Senior Analyst, Customer Experience (CX) Analytics</h4>
+                                <p class="text-sm text-slate-500">Verizon | May 2017 - Jul 2020</p>
+                            </div>
+                        </div>
+                        <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
+                             <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Translated complex customer feedback and operational data into actionable strategies to improve the customer journey.</li>
+                                <li>Communicated data driven analysis methods and actionable next steps by collaborating with business stakeholders.</li>
+                                <li>Improved key market KPIs (NPS, Churn, AHT) and provided strategic direction by developing and implementing CX models derived from data-driven insights from business case reviews and product lifecycle analysis.</li>
+                                <li>Engineered CX architecture solutions using SQL and Tableau to support phased production system rollouts.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item pl-12 cursor-pointer group">
+                        <div class="flex items-center">
+                            <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
+                                <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold uppercase">Senior Manager, On Deck Leadership Program</h4>
+                                <p class="text-sm text-slate-500">Verizon | Oct 2015 - May 2017</p>
+                            </div>
+                        </div>
+                        <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
+                             <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Created a digital playbook of best practices that drove measurable improvements in team KPIs.</li>
+                                <li>Designed and implemented hands-on skill assessments to ensure leadership sustainability and excellence.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item pl-12 cursor-pointer group">
+                         <div class="flex items-center">
+                             <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
+                                <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold uppercase">Supervisor, Enterprise Helpdesk</h4>
+                                <p class="text-sm text-slate-500">Verizon | Jul 2010 - Oct 2015</p>
+                            </div>
+                        </div>
+                        <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
+                           <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Managing Enterprise helpdesk technical support 24x7 operations investigating and resolving complex issues.</li>
+                                <li>Led a director-sponsored project that successfully reduced transfers from 8% to < 1% and repeats from 30% to 18%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16 md:mb-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center uppercase">Core Competencies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-2xl font-semibold text-slate-800 mb-4 uppercase">Leadership</h3>
+                    <ul class="space-y-2 text-slate-600 list-disc list-inside">
+                        <li>Team Leadership & Mentoring</li>
+                        <li>Cross-Functional Initiatives</li>
+                        <li>Change Management</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-2xl font-semibold text-slate-800 mb-4 uppercase">Project Management</h3>
+                     <ul class="space-y-2 text-slate-600 list-disc list-inside">
+                        <li>Agile Methodologies</li>
+                        <li>Project Planning & Execution</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-2xl font-semibold text-slate-800 mb-4 uppercase">Data & Analytics</h3>
+                     <ul class="space-y-2 text-slate-600 list-disc list-inside">
+                        <li>SQL & Tableau</li>
+                        <li>Data Visualization & Engineering</li>
+                        <li>Python & BTEQ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certs -->
+        <section id="education" class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8 uppercase">Education & Certifications</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-slate-800">Bachelor of Science, Data Management and Data Analytics</h3>
+                    <p class="text-slate-500">Western Governors University | Feb 2023</p>
+                </div>
+                <div>
+                     <h3 class="text-xl font-semibold text-slate-800">Key Certifications</h3>
+                    <p class="text-slate-500">Tableau Desktop Certified Associate | Udacity Data Analyst Nanodegree | CompTIA Project+/Network+/A+ | Oracle 12c Database | CIW Data Analyst</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-white mt-20 border-t border-slate-200">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase">Location</h3>
+                    <p class="text-slate-500">Salt Lake City, Utah</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase">Contact</h3>
+                    <p><a href="tel:801-688-0422" class="text-slate-500 hover:text-blue-600">801-688-0422</a></p>
+                    <p><a href="mailto:jefflovesdata@gmail.com" class="text-slate-500 hover:text-blue-600">jefflovesdata@gmail.com</a></p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase">Social</h3>
+                    <div class="flex justify-center md:justify-start space-x-5 mt-2">
+                        <a href="https://www.linkedin.com/in/jeff-maroney/" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-slate-400 text-sm mt-12 border-t border-slate-200 pt-8">
+                &copy; 2025 Jeff Maroney || All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- KPI Counter Animation ---
+            const kpiElements = document.querySelectorAll('[data-kpi]');
+            const animateKPI = (el) => {
+                const target = parseInt(el.dataset.kpi, 10);
+                let current = 0;
+                const increment = Math.ceil(target / 100);
+                const update = () => {
+                    current += increment;
+                    if (current < target) {
+                        el.textContent = current.toLocaleString();
+                        requestAnimationFrame(update);
+                    } else {
+                        el.textContent = target.toLocaleString();
+                    }
+                };
+                update();
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateKPI(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            kpiElements.forEach(el => observer.observe(el));
+            
+            // --- Interactive Timeline ---
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const details = item.querySelector('.timeline-details');
+                    const wasOpen = details.classList.contains('open');
+
+                    // Close all other items
+                    timelineItems.forEach(otherItem => {
+                        otherItem.querySelector('.timeline-details').classList.remove('open');
+                        otherItem.classList.remove('active');
+                    });
+
+                    // Toggle the clicked item
+                    if (!wasOpen) {
+                        details.classList.add('open');
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

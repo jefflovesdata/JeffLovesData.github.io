@@ -1,132 +1,121 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Jeff Maroney Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeff Maroney - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
 
-		<!-- Wrapper -->
-		<div id="wrapper" class="fade-in">
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-slate-800 tracking-wider">JEFF LOVES DATA</div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase">
+                <a href="index.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Projects</a>
+                <a href="about.html" class="text-slate-600 hover:text-blue-600 transition">About Me</a>
+                <a href="resume.html" class="text-slate-600 hover:text-blue-600 transition">Resume</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-5">
+                <a href="https://www.linkedin.com/in/jeff-maroney/" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-lg"></i></a>
+                <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-lg"></i></a>
+            </div>
+        </nav>
+    </header>
 
-			<!-- Intro -->
-			<div id="intro" style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center center;">
-				<h1>Jeff Loves Data<br />
-				Portfolio</h1>
-				<p class="intro-bio">👋🏻 Passionate problem-solver delivering data-driven solutions</p>
-				<p class="intro-bio">📊 Sr. Manager of Data Analytics, Data Science</p>
-				<p class="intro-bio">🎓 Bachelor of Science in Data Analytics</p>
-				<ul class="actions">
-					<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-				</ul>
-			</div>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6">
+        
+        <!-- Intro Section -->
+        <section id="intro" class="text-center py-20 md:py-24">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-4 uppercase tracking-wide">JEFF LOVES DATA</h1>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-8 uppercase tracking-wide">PORTFOLIO</h2>
+            <div class="text-lg text-slate-600 space-y-2">
+                <p>👋🏻 Passionate problem-solver delivering data-driven solutions</p>
+                <p>📊 Sr. Manager of Data Analytics, Data Science</p>
+                <p>🎓 Bachelor of Science in Data Analytics</p>
+            </div>
+        </section>
 
-			<!-- Header -->
-			<header id="header">
-				<a href="https://www.linkedin.com/in/jeff-maroney/" target="_blank" rel="noopener noreferrer" class="logo">Jeff Loves Data</a>
-			</header>
+        <!-- Featured Project -->
+        <section class="mb-16 md:mb-24">
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4 uppercase">Healthcare Analytics - Reducing Hospital Readmissions</h3>
+                    <p class="text-slate-600 mb-6">An end-to-end analysis of hospital readmission drivers using Python, SQL, and Tableau to provide actionable insights for care management teams to improve patient outcomes, enhance care quality, and increase operational efficiency.</p>
+                    <a href="https://github.com/jefflovesdata/Hospital-Readmissions" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider">
+                        View Project
+                    </a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <a href="https://github.com/jefflovesdata/Hospital-Readmissions" target="_blank">
+                        <img src="images/Healthcare Analytics - Reducing Hospital Readmissions.png" alt="Healthcare Analytics Dashboard Screenshot" class="rounded-lg shadow-md">
+                    </a>
+                </div>
+            </div>
+        </section>
 
-			<!-- Nav -->
-			<nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="index.html">Projects</a></li>
-					<li><a href="about.html">About Me</a></li>
-				</ul>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/jeff-maroney/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/jefflovesdata" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-					<li><a href="https://www.datascienceportfol.io/jefflovesdata" class="icon solid fa-globe" target="_blank"><span class="label">Portfolio</span></a></li>
-				</ul>
-			</nav>
+        <!-- Other Projects -->
+        <section class="grid md:grid-cols-2 gap-8">
+            <div class="project-card bg-white p-8 rounded-xl shadow-md border border-slate-200 flex flex-col">
+                <a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank">
+                    <img src="images/Telecom Channel Partner - Executive Summary.png" alt="Telecom Dashboard Screenshot" class="rounded-lg mb-6 shadow-sm">
+                </a>
+                <h3 class="text-2xl font-bold text-slate-800 mb-3 uppercase">Telecom Channel Partner Tableau Dashboard Examples</h3>
+                <p class="text-slate-600 mb-6 flex-grow">A suite of Tableau dashboards designed to analyze telecom channel partner gross adds sales performance, from executive summaries to experimental control charts. All data has been anonymized, masked or obfuscated.</p>
+                <a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider w-full text-center">
+                    View Project
+                </a>
+            </div>
+            <div class="project-card bg-white p-8 rounded-xl shadow-md border border-slate-200 flex flex-col">
+                <a href="https://r.mtdv.me/articles/uhsy64f2Jq" target="_blank">
+                    <img src="images/pic03.jpg" alt="Customer Churn Analysis" class="rounded-lg mb-6 shadow-sm">
+                </a>
+                <h3 class="text-2xl font-bold text-slate-800 mb-3 uppercase">Customer Churn Analysis Using Python, SQL and Tableau</h3>
+                <p class="text-slate-600 mb-6 flex-grow">Project coming soon. This project involves a deep dive into customer data to predict churn and identify key factors driving customer retention.</p>
+                <a href="https://r.mtdv.me/articles/uhsy64f2Jq" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider w-full text-center">
+                    View Project
+                </a>
+            </div>
+        </section>
+    </main>
 
-			<!-- Main -->
-			<div id="main">
+    <!-- Footer -->
+    <footer class="bg-white mt-20 border-t border-slate-200">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase">Location</h3>
+                    <p class="text-slate-500">Salt Lake City, Utah</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase">Contact</h3>
+                    <p><a href="tel:801-688-0422" class="text-slate-500 hover:text-blue-600">801-688-0422</a></p>
+                    <p><a href="mailto:jefflovesdata@gmail.com" class="text-slate-500 hover:text-blue-600">jefflovesdata@gmail.com</a></p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2 uppercase">Social</h3>
+                    <div class="flex justify-center md:justify-start space-x-5 mt-2">
+                        <a href="https://www.linkedin.com/in/jeff-maroney/" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-slate-400 text-sm mt-12 border-t border-slate-200 pt-8">
+                &copy; 2025 Jeff Maroney || All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
-				<!-- Featured Post -->
-				<article class="post featured">
-					<header class="major">
-						<h2><a href="https://github.com/jefflovesdata/Hospital-Readmissions" target="_blank">Healthcare Analytics - Reducing Hospital Readmissions<br />
-						Using Python, SQL & Tableau</a></h2>
-						<p>An end-to-end analysis of hospital readmission drivers using Python, SQL, and Tableau to provide actionable insights for care management teams to improve patient outcomes, enhance care quality, and increase operational efficiency.</p>
-					</header>
-					<a href="https://github.com/jefflovesdata/Hospital-Readmissions" target="_blank" class="image main"><img src="images/Healthcare Analytics - Reducing Hospital Readmissions.png" alt="Healthcare Analytics Dashboard Screenshot" /></a>
-					<ul class="actions special">
-						<li><a href="https://github.com/jefflovesdata/Hospital-Readmissions" target="_blank" class="button large">View Project on GitHub</a></li>
-					</ul>
-				</article>
-
-				<!-- Posts -->
-				<section class="posts">
-					<article>
-						<header>
-							<h2><a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank">Telecom Channel Partner<br />
-							Tableau Dashboard Examples</a></h2>
-						</header>
-						<a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank" class="image fit"><img src="images/Telecom Channel Partner - Executive Summary.png" alt="Telecom Dashboard Screenshot" /></a>
-						<p>A suite of Tableau dashboards designed to analyze telecom channel partner gross adds sales performance, from executive summaries to experimental control charts. All data has been anonymized, masked or obfuscated.</p>
-						<ul class="actions special">
-							<li><a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank" class="button">View Project</a></li>
-						</ul>
-					</article>
-					<article>
-						<header>
-							<h2><a href="https://r.mtdv.me/articles/uhsy64f2Jq" target="_blank">Customer Churn Analysis<br />
-							Using Python, SQL and Tableau</a></h2>
-						</header>
-						<a href="https://r.mtdv.me/articles/uhsy64f2Jq" target="_blank" class="image fit"><img src="images/pic03.jpg" alt="Customer Churn Analysis" /></a>
-						<p>Project description coming soon. This project involves a deep dive into customer data to predict churn and identify key factors driving customer retention.</p>
-						<ul class="actions special">
-							<li><a href="https://r.mtdv.me/articles/uhsy64f2Jq" target="_blank" class="button">View Project</a></li>
-						</ul>
-					</article>
-				</section>
-
-			</div>
-
-			<!-- Footer -->
-			<footer id="footer">
-				<section class="split contact">
-					<section class="alt">
-						<h3>Address</h3>
-						<p>Salt Lake City, Utah</p>
-					</section>
-					<section>
-						<h3>Phone</h3>
-						<p><a href="tel:801-688-0422">801-688-0422</a></p>
-					</section>
-					<section>
-						<h3>Email</h3>
-						<p><a href="mailto:jefflovesdata@gmail.com">jefflovesdata@gmail.com</a></p>
-					</section>
-					<section>
-						<h3>Social</h3>
-						<ul class="icons alt">
-							<li><a href="https://www.linkedin.com/in/jeff-maroney/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/jefflovesdata" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.datascienceportfol.io/jefflovesdata" class="icon solid alt fa-globe" target="_blank"><span class="label">Portfolio</span></a></li>
-						</ul>
-					</section>
-				</section>
-			</footer>
-
-			<!-- Copyright -->
-			<div id="copyright">
-				<ul><li>&copy; Jeff Maroney</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-			</div>
-
-		</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
