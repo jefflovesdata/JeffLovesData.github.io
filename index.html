@@ -29,13 +29,31 @@
                 <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-lg"></i></a>
                 <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-lg"></i></a>
             </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-slate-800 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Projects</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">About Me</a>
+                <a href="resume.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Resume</a>
+                <div class="flex justify-center space-x-6 pt-4">
+                    <a href="https://www.linkedin.com/in/jeff-maroney/" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                    <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6">
         
-        <!-- Intro Section -->
         <section id="intro" class="text-center py-20 md:py-24">
             <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-4 uppercase tracking-wide">JEFF LOVES DATA</h1>
             <h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-8 uppercase tracking-wide">PORTFOLIO</h2>
@@ -46,12 +64,19 @@
             </div>
         </section>
 
-        <!-- Featured Project -->
         <section class="mb-16 md:mb-24">
             <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 grid md:grid-cols-2 gap-8 items-center">
                 <div class="order-2 md:order-1">
                     <h3 class="text-3xl font-bold text-slate-800 mb-4 uppercase">Healthcare Analytics - Reducing Hospital Readmissions</h3>
-                    <p class="text-slate-600 mb-6">An end-to-end analysis of hospital readmission drivers using Python, SQL, and Tableau to provide actionable insights for care management teams to improve patient outcomes, enhance care quality, and increase operational efficiency.</p>
+                    <p class="text-slate-600 mb-4">An end-to-end analysis of hospital readmission drivers using Python, SQL, and Tableau to provide actionable insights for care management teams to improve patient outcomes, enhance care quality, and increase operational efficiency.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Python (Pandas, Seaborn)</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">SQL (PostgreSQL)</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Tableau</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Exploratory Data Analysis (EDA)</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Data Cleaning</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Excel</span>
+                    </div>
                     <a href="https://github.com/jefflovesdata/Hospital-Readmissions" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider">
                         View Project
                     </a>
@@ -64,15 +89,25 @@
             </div>
         </section>
 
-        <!-- Other Projects -->
         <section class="grid md:grid-cols-2 gap-8">
             <div class="project-card bg-white p-8 rounded-xl shadow-md border border-slate-200 flex flex-col">
                 <a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank">
                     <img src="images/Telecom Channel Partner - Executive Summary.png" alt="Telecom Dashboard Screenshot" class="rounded-lg mb-6 shadow-sm">
                 </a>
-                <h3 class="text-2xl font-bold text-slate-800 mb-3 uppercase">Telecom Channel Partner Tableau Dashboard Examples</h3>
-                <p class="text-slate-600 mb-6 flex-grow">A suite of Tableau dashboards designed to analyze telecom channel partner gross adds sales performance, from executive summaries to experimental control charts. All data has been anonymized, masked or obfuscated.</p>
-                <a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider w-full text-center">
+                <h3 class="text-2xl font-bold text-slate-800 mb-3 uppercase">Telecom Channel Partner Tableau Dashboard</h3>
+                <p class="text-slate-600 mb-4">A suite of Tableau dashboards designed to analyze telecom channel partner gross adds sales performance, from executive summaries to experimental control charts. All data has been anonymized, masked or obfuscated.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">SQL</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Tableau</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Data Engineering</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Data Visualization</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">BTEQ</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Project Management</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Leadership</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Communication</span>
+                </div>
+                <a href="https://github.com/jefflovesdata/telecom-channel-dashboard" target="_blank" class="mt-auto inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider w-full text-center">
                     View Project
                 </a>
             </div>
@@ -81,15 +116,17 @@
                     <img src="images/pic03.jpg" alt="Customer Churn Analysis" class="rounded-lg mb-6 shadow-sm">
                 </a>
                 <h3 class="text-2xl font-bold text-slate-800 mb-3 uppercase">Customer Churn Analysis Using Python, SQL and Tableau</h3>
-                <p class="text-slate-600 mb-6 flex-grow">Project coming soon. This project involves a deep dive into customer data to predict churn and identify key factors driving customer retention.</p>
-                <a href="https://r.mtdv.me/articles/uhsy64f2Jq" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider w-full text-center">
+                <p class="text-slate-600 mb-4">Project coming soon. This project involves a deep dive into customer data to predict churn and identify key factors driving customer retention.</p>
+                 <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Coming Soon</span>
+                </div>
+                <a href="https://r.mtdv.me/articles/uhsy64f2Jq" target="_blank" class="mt-auto inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition uppercase text-sm tracking-wider w-full text-center">
                     View Project
                 </a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white mt-20 border-t border-slate-200">
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
@@ -116,6 +153,14 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>

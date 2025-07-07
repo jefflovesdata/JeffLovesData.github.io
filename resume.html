@@ -48,6 +48,8 @@
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold text-slate-800 tracking-wider">JEFF LOVES DATA</div>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase">
                 <a href="index.html" class="text-slate-600 hover:text-blue-600 transition">Projects</a>
                 <a href="about.html" class="text-slate-600 hover:text-blue-600 transition">About Me</a>
@@ -58,7 +60,28 @@
                 <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-lg"></i></a>
                 <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-lg"></i></a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-slate-800 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Projects</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">About Me</a>
+                <a href="resume.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Resume</a>
+                <div class="flex justify-center space-x-6 pt-4">
+                    <a href="https://www.linkedin.com/in/jeff-maroney/" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                    <a href="https://github.com/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -103,7 +126,7 @@
                 <div class="absolute left-4 top-0 h-full w-0.5 bg-slate-200"></div>
 
                 <!-- Timeline Items -->
-                <div class="space-y-12">
+                <div class="space-y-8">
                     
                     <div class="timeline-item pl-12 cursor-pointer group">
                         <div class="flex items-center">
@@ -116,15 +139,20 @@
                             </div>
                         </div>
                         <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
-                            <ul class="list-disc list-inside space-y-2 text-slate-600">
-                                <li>Delivered business intelligence for performance metrics, sales, and operations, taking ownership of the data pipeline and dashboard architecture to drive strategic programs.</li>
-                                <li>Architected 300+ visualization software dashboards on cloud infrastructure with over 2m views from 10k+ B2B users.</li>
-                                <li>Demonstrated innovation by designing and launching the first external partner reporting suite for 50+ users, resulting in a 19% increase in strategic product adoption and a 15% YoY revenue increase for Channel, Indirect and Retail teams.</li>
-                                <li>Improved operational excellence by automating reporting processes for 8 channel programs, reducing ad-hoc reporting requests by 20% and ensuring data integrity and brand standards across 800 users.</li>
-                                <li>Collaborated with stakeholders to translate business vision into data warehouse requirements, using data mining and modeling to drive scalable solutions for building and automating data pipelines and dashboards.</li>
-                                <li>Enabled data-driven product development via streamlined data access and predictive analytics onboarding programs, optimizing inventory management and point-of-sale growth through training, learning and development.</li>
-                                <li>Building relationships with remote teams to monitor organizational short and long-term goals and embedded solutions.</li>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600 mb-4">
+                                <li>Architected 300+ dashboards on cloud infrastructure with over 2m views from 10k+ B2B users.</li>
+                                <li>Launched the first external partner reporting suite for 50+ users, resulting in a 19% increase in product adoption and a 15% YoY revenue increase.</li>
+                                <li>Automated reporting processes for 8 channel programs, reducing ad-hoc reporting requests by 20%.</li>
                             </ul>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Leadership</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Project Management</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">SQL</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tableau</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Engineering</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">BTEQ</span>
+                            </div>
                         </div>
                     </div>
                     
@@ -139,12 +167,16 @@
                             </div>
                         </div>
                         <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
-                             <ul class="list-disc list-inside space-y-2 text-slate-600">
-                                <li>Translated complex customer feedback and operational data into actionable strategies to improve the customer journey.</li>
-                                <li>Communicated data driven analysis methods and actionable next steps by collaborating with business stakeholders.</li>
-                                <li>Improved key market KPIs (NPS, Churn, AHT) and provided strategic direction by developing and implementing CX models derived from data-driven insights from business case reviews and product lifecycle analysis.</li>
+                             <ul class="list-disc list-inside space-y-2 text-slate-600 mb-4">
+                                <li>Improved key market KPIs (NPS, Churn, AHT) by developing and implementing CX models derived from data-driven insights.</li>
                                 <li>Engineered CX architecture solutions using SQL and Tableau to support phased production system rollouts.</li>
                             </ul>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">SQL</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tableau</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Visualization</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Communication</span>
+                            </div>
                         </div>
                     </div>
 
@@ -159,10 +191,15 @@
                             </div>
                         </div>
                         <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
-                             <ul class="list-disc list-inside space-y-2 text-slate-600">
+                             <ul class="list-disc list-inside space-y-2 text-slate-600 mb-4">
                                 <li>Created a digital playbook of best practices that drove measurable improvements in team KPIs.</li>
                                 <li>Designed and implemented hands-on skill assessments to ensure leadership sustainability and excellence.</li>
                             </ul>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Leadership</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Project Management</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Communication</span>
+                            </div>
                         </div>
                     </div>
 
@@ -177,10 +214,15 @@
                             </div>
                         </div>
                         <div class="timeline-details bg-white border border-slate-200 rounded-lg mt-4">
-                           <ul class="list-disc list-inside space-y-2 text-slate-600">
-                                <li>Managing Enterprise helpdesk technical support 24x7 operations investigating and resolving complex issues.</li>
+                           <ul class="list-disc list-inside space-y-2 text-slate-600 mb-4">
+                                <li>Managed 24/7 Enterprise helpdesk technical support operations.</li>
                                 <li>Led a director-sponsored project that successfully reduced transfers from 8% to < 1% and repeats from 30% to 18%.</li>
                             </ul>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Leadership</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tech Support</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Telecom</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -312,6 +354,13 @@
                         item.classList.add('active');
                     }
                 });
+            });
+
+            // --- Mobile Menu Toggle ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
         });
     </script>
