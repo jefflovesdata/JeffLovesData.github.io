@@ -34,22 +34,15 @@
          .timeline-item.active h4 {
             color: #1d4ed8; /* Blue-700 */
         }
+        .skill-pill.active { background-color: #2563eb; color: white; }
     </style>
-    <!-- 
-        Chosen Palette: Slate Gray Professional
-        Application Structure Plan: A single-page application with an initial KPI dashboard for impact, an interactive career timeline to show progression without being text-heavy, and distinct sections for skills and education. This non-linear structure allows recruiters to quickly grasp key achievements and explore details as needed.
-        Visualization & Content Choices: Resume Info -> Goal -> Method -> Interaction -> Justification. Quantifiable Achievements -> Inform -> Animated Number Counters -> On-scroll animation -> Engaging & memorable. Career History -> Explore -> Interactive Timeline -> JS toggle on click -> Prevents information overload. Skills -> Organize -> Grid of cards -> Hover effect -> Clean & modern.
-        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-    -->
-</head>
+    </head>
 <body class="bg-slate-50 text-slate-700">
 
-    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold text-slate-800 tracking-wider">JEFF LOVES DATA</div>
             
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase">
                 <a href="index.html" class="text-slate-600 hover:text-blue-600 transition">Projects</a>
                 <a href="about.html" class="text-slate-600 hover:text-blue-600 transition">About Me</a>
@@ -61,7 +54,6 @@
                 <a href="https://www.datascienceportfol.io/jefflovesdata" target="_blank" class="text-slate-500 hover:text-blue-600 transition"><i class="fas fa-globe fa-lg"></i></a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button id="menu-btn" class="text-slate-800 focus:outline-none">
                     <i class="fas fa-bars fa-lg"></i>
@@ -69,7 +61,6 @@
             </div>
         </nav>
         
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Projects</a>
@@ -84,10 +75,8 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12 md:py-20">
 
-        <!-- Summary & KPIs Section -->
         <section id="summary" class="mb-16 md:mb-24">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 uppercase">
@@ -105,11 +94,11 @@
                 </div>
                 <div class="kpi-card bg-white p-6 rounded-xl shadow-md border border-slate-200">
                     <h3 class="text-4xl font-bold text-blue-600 mb-2" data-kpi="300">0</h3>
-                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Dashboards Architected</p>
+                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Dashboards Supported</p>
                 </div>
                 <div class="kpi-card bg-white p-6 rounded-xl shadow-md border border-slate-200">
                     <h3 class="text-4xl font-bold text-blue-600 mb-2" data-kpi="10000">0</h3>
-                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">B2B Users</p>
+                    <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Unique Users</p>
                 </div>
                  <div class="kpi-card bg-white p-6 rounded-xl shadow-md border border-slate-200">
                     <h3 class="text-4xl font-bold text-blue-600 mb-2" data-kpi="2000000">0</h3>
@@ -118,17 +107,14 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="mb-16 md:mb-24">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center uppercase">Professional Experience</h2>
             <div class="relative max-w-3xl mx-auto">
-                <!-- Timeline Line -->
                 <div class="absolute left-4 top-0 h-full w-0.5 bg-slate-200"></div>
 
-                <!-- Timeline Items -->
                 <div class="space-y-8">
                     
-                    <div class="timeline-item pl-12 cursor-pointer group">
+                    <div class="timeline-item pl-12 cursor-pointer group" data-tags="SQL,Tableau,BTEQ,Python,Project Management,Data Analysis,Data Visualization,Data Engineering,Change Management,Agile Methodology,Strategic Thinking,Leadership,Team Building,Communication">
                         <div class="flex items-center">
                             <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
                                 <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
@@ -145,18 +131,25 @@
                                 <li>Automated reporting processes for 8 channel programs, reducing ad-hoc reporting requests by 20%.</li>
                             </ul>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Leadership</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Project Management</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">SQL</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tableau</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Engineering</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">BTEQ</span>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="SQL">SQL</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Tableau">Tableau</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="BTEQ">BTEQ</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Python">Python</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Project Management">Project Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Data Analysis">Data Analysis</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Data Visualization">Data Visualization</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Data Engineering">Data Engineering</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Change Management">Change Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Agile Methodology">Agile Methodology</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Strategic Thinking">Strategic Thinking</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Leadership">Leadership</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Team Building">Team Building</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Communication">Communication</button>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="timeline-item pl-12 cursor-pointer group">
+                    <div class="timeline-item pl-12 cursor-pointer group" data-tags="SQL,Tableau,Data Analysis,Data Visualization,Customer Journey Mapping,Customer Lifecycle Management,UX Design,Content Creation,Change Management,Agile Methodology,Curriculum Development,Project Management,Strategic Thinking,Leadership,Team Building,Communication">
                         <div class="flex items-center">
                              <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
                                 <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
@@ -172,21 +165,33 @@
                                 <li>Engineered CX architecture solutions using SQL and Tableau to support phased production system rollouts.</li>
                             </ul>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">SQL</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tableau</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Visualization</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Communication</span>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="SQL">SQL</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Tableau">Tableau</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Data Analysis">Data Analysis</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Data Visualization">Data Visualization</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Customer Journey Mapping">Customer Journey Mapping</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Customer Lifecycle Management">Customer Lifecycle Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="UX Design">UX Design</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Content Creation">Content Creation</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Change Management">Change Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Agile Methodology">Agile Methodology</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Curriculum Development">Curriculum Development</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Project Management">Project Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Strategic Thinking">Strategic Thinking</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Leadership">Leadership</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Team Building">Team Building</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Communication">Communication</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item pl-12 cursor-pointer group">
+                    <div class="timeline-item pl-12 cursor-pointer group" data-tags="Learning and Development,Training,Content Creation,Curriculum Development,Workforce Management,Project Management,Leadership,Team Building,Communication">
                         <div class="flex items-center">
                             <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
                                 <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
                             </div>
                             <div>
-                                <h4 class="text-xl font-semibold uppercase">Senior Manager, On Deck Leadership Program</h4>
+                                <h4 class="text-xl font-semibold uppercase">Senior Manager, Leadership Development</h4>
                                 <p class="text-sm text-slate-500">Verizon | Oct 2015 - May 2017</p>
                             </div>
                         </div>
@@ -196,14 +201,20 @@
                                 <li>Designed and implemented hands-on skill assessments to ensure leadership sustainability and excellence.</li>
                             </ul>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Leadership</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Project Management</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Communication</span>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Learning and Development">Learning and Development</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Training">Training</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Content Creation">Content Creation</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Curriculum Development">Curriculum Development</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Workforce Management">Workforce Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Project Management">Project Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Leadership">Leadership</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Team Building">Team Building</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Communication">Communication</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item pl-12 cursor-pointer group">
+                    <div class="timeline-item pl-12 cursor-pointer group" data-tags="Telecom,Tech Support,Call Center Management,Project Management,Leadership,Team Building,Communication">
                          <div class="flex items-center">
                              <div class="timeline-marker absolute left-0 h-8 w-8 rounded-full bg-slate-200 border-4 border-slate-50 flex items-center justify-center">
                                 <div class="h-2 w-2 rounded-full bg-slate-400 group-hover:bg-blue-500 transition"></div>
@@ -219,9 +230,13 @@
                                 <li>Led a director-sponsored project that successfully reduced transfers from 8% to < 1% and repeats from 30% to 18%.</li>
                             </ul>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Leadership</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tech Support</span>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Telecom</span>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Telecom">Telecom</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Tech Support">Tech Support</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Call Center Management">Call Center Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Project Management">Project Management</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Leadership">Leadership</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Team Building">Team Building</button>
+                                <button class="skill-pill bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full" data-tag="Communication">Communication</button>
                             </div>
                         </div>
                     </div>
@@ -229,7 +244,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-16 md:mb-24">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center uppercase">Core Competencies</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -260,7 +274,6 @@
             </div>
         </section>
 
-        <!-- Education & Certs -->
         <section id="education" class="text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8 uppercase">Education & Certifications</h2>
             <div class="max-w-3xl mx-auto">
@@ -276,7 +289,6 @@
         </section>
     </main>
     
-    <!-- Footer -->
     <footer class="bg-white mt-20 border-t border-slate-200">
         <div class="container mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
@@ -338,7 +350,8 @@
             // --- Interactive Timeline ---
             const timelineItems = document.querySelectorAll('.timeline-item');
             timelineItems.forEach(item => {
-                item.addEventListener('click', () => {
+                const header = item.querySelector('h4');
+                header.addEventListener('click', () => {
                     const details = item.querySelector('.timeline-details');
                     const wasOpen = details.classList.contains('open');
 
@@ -361,6 +374,38 @@
             const mobileMenu = document.getElementById('mobile-menu');
             menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- Skill Pill Filtering Logic ---
+            const skillPills = document.querySelectorAll('.skill-pill');
+            const experienceItems = document.querySelectorAll('.timeline-item');
+            let activeTag = null;
+
+            skillPills.forEach(pill => {
+                pill.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent the timeline item from toggling
+                    const clickedTag = pill.dataset.tag;
+
+                    if (activeTag === clickedTag) {
+                        activeTag = null;
+                        skillPills.forEach(p => p.classList.remove('active'));
+                        experienceItems.forEach(item => item.style.display = '');
+                    } else {
+                        activeTag = clickedTag;
+                        skillPills.forEach(p => {
+                            p.classList.toggle('active', p.dataset.tag === activeTag);
+                        });
+
+                        experienceItems.forEach(item => {
+                            const itemTags = item.dataset.tags.split(',');
+                            if (itemTags.includes(activeTag)) {
+                                item.style.display = '';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    }
+                });
             });
         });
     </script>
